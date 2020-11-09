@@ -1,0 +1,38 @@
+:root {
+    --primary-color: rgb(179, 119, 119);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.app-container {
+    margin: 0 auto;
+    width: 80%;
+    min-width: 400px;
+    max-width: 1800px;
+}
+
+.app-title {
+    text-align: center;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-name, .search-course, .search-author {
+    background: var(--primary-color);
+    border: 5px solid var(--primary-color);
+}
+
+.name-icon, .course-icon, .author-icon {
+    padding: 8px 10px;
+}
+
+.search-input-name, .search-input-course, .search-input-author {
+    margin-left: 6px;
+}
