@@ -1,5 +1,6 @@
 :root {
     --primary-color: rgb(179, 119, 119);
+    --font-primary: "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 *, *::before, *::after {
@@ -8,8 +9,13 @@
     padding: 0;
 }
 
+body {
+    font-family: var(--font-primary);
+}
+
 .app-container {
     margin: 0 auto;
+    padding-top: 10rem;
     width: 80%;
     min-width: 400px;
     max-width: 1800px;
@@ -22,17 +28,34 @@
 .search-form {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.search-name, .search-course, .search-author, .search-input-button {
+    display: flex;
+    flex-direction: row;
+    margin: 8px 0;
+    width: 100%;
+    border: 3px solid var(--primary-color);
+    border-radius: 5px;
 }
 
 .search-name, .search-course, .search-author {
     background: var(--primary-color);
-    border: 5px solid var(--primary-color);
 }
 
 .name-icon, .course-icon, .author-icon {
     padding: 8px 10px;
+    padding-right: 12px;
+    color: white;
 }
 
-.search-input-name, .search-input-course, .search-input-author {
-    margin-left: 6px;
+.search-input-name, .search-input-course, .search-input-author, .search-input-button {
+    width: 100%;
+}
+
+.search-input-button {
+    height: 40px;
+    background-color: white;
 }
