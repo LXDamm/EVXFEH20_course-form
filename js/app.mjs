@@ -1,9 +1,9 @@
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
 class Course {
-    constructor(customerName, courseName, authorName, imgPath) {
+    constructor(studentName, courseName, authorName, imgPath) {
         this.id = uuidv4();
-        this.customerName = customerName;
+        this.studentName = studentName;
         this.courseName = courseName;
         this.authorName = authorName;
         this.imgPath = imgPath;
@@ -21,29 +21,59 @@ let courses = [
     new Course('Lexx Damm', 'A Crocodilians take on Software Development', 'Miss Croc', '8.jpg')
 ];
 
+const studentInputE = document.querySelector('.post-input-student');
+const courseInputE = document.querySelector('.post-input-course');
+const authorInputE = document.querySelector('.post-input-author');
+const postButtonE = document.querySelector('.post-input-button');
+const loadingAnimationContainerE = document.querySelector('.app-loading-container');
 const coursesListE = document.querySelector('.courses-list');
+
+const checkValid = () => {
+    if (studentInputE.value != '' && courseInputE.value != '' && authorInputE.value != '') {
+        postButtonE.removeAttribute('disabled');
+    } else postButtonE.toggleAttribute('disabled', true);
+};
+
+const postCourse = () => {
+    loadingAnimationContainerE.style.display = 'flex';
+    const studentName = studentInputE.value;
+    const courseName = courseInputE.value;
+    const authorName = authorInputE.value;
+    courses.push(new Course(studentName, courseName, authorName));
+    populateList();
+    setTimeout(() => {
+        loadingAnimationContainerE.style.display = 'none';
+    }, 1000);
+};
 
 const createListItem = (item) => {
     return `
         <li class="courses-list-item">
             <div class="course-card">
                 <img class="course-card-img" src="./img/${item.imgPath}" alt="Bild till kursen ${item.courseName}">
-                <span>${item.customerName}</span><br><span>${item.courseName}</span><br><span>${item.authorName}</span>
+                <span>${item.studentName}</span><br><span>${item.courseName}</span><br><span>${item.authorName}</span>
             </div>
         </li>
     `;
-}
+};
 
 const populateList = () => {
     coursesListE.innerHTML = '';
     courses.forEach((item) => {
         coursesListE.innerHTML += createListItem(item);
     });
-}
+};
+
+const loadEventListeners = () => {
+    studentInputE.addEventListener('keyup', checkValid);
+    courseInputE.addEventListener('keyup', checkValid);
+    authorInputE.addEventListener('keyup', checkValid);
+    postButtonE.addEventListener('click', postCourse);
+};
 
 const run = () => {
     populateList();
-    console.log(courses);
+    loadEventListeners();
 }
 
 run();

@@ -29,7 +29,7 @@ body {
     text-align: center;
 }
 
-.search-form {
+.post-form {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -37,7 +37,7 @@ body {
     width: 100%;
 }
 
-.search-name, .search-course, .search-author, .search-input-button {
+.post-student, .post-course, .post-author, .post-input-button {
     display: flex;
     flex-direction: row;
     margin: 8px 0;
@@ -46,23 +46,28 @@ body {
     border-radius: 5px;
 }
 
-.search-name, .search-course, .search-author {
+.post-student, .post-course, .post-author {
     background: var(--primary-color);
 }
 
-.name-icon, .course-icon, .author-icon {
+.student-icon, .course-icon, .author-icon {
     padding: 8px 10px;
     padding-right: 12px;
     color: white;
 }
 
-.search-input-name, .search-input-course, .search-input-author, .search-input-button {
+.post-input-student, .post-input-course, .post-input-author, .post-input-button {
     width: 100%;
 }
 
-.search-input-button {
+.post-input-button {
     height: 40px;
     background-color: white;
+}
+
+.app-loading-container {
+    display: none;
+    justify-content: center;
 }
 
 .app-courses-container {

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loading.css">
     <link rel="modulepreload" href="https://jspm.dev/uuid">
     <link rel="modulepreload" href="./js/app.mjs">
     <script src="https://kit.fontawesome.com/368dbbd85d.js" crossorigin="anonymous"></script>
@@ -17,23 +18,24 @@
             <h1 class="app-title">Get a Free course</h1>
         </div>
         <div class="app-form-container">
-            <form action="" class="search-form">
-                <div class="search-name">
-                    <label class="name-icon"><i class="fas fa-user"></i></label>
-                    <input class="search-input-name" type="text">
+            <form action="" class="post-form">
+                <div class="post-student">
+                    <label class="student-icon"><i class="fas fa-user"></i></label>
+                    <input class="post-input-student" type="text">
                 </div>
-                <div class="search-course">
+                <div class="post-course">
                     <label class="course-icon"><i class="fas fa-book"></i></label>
-                    <input class="search-input-course" type="text">
+                    <input class="post-input-course" type="text">
                 </div>
-                <div class="search-author">
+                <div class="post-author">
                     <label class="author-icon"><i class="fas fa-user-circle"></i></label>
-                    <input class="search-input-author" type="text">
+                    <input class="post-input-author" type="text">
                 </div>
-                <div class="search-submit">
-                    <input class="search-input-button" type="button" value="Submit">
-                </div>
+                <input type="button" class="post-input-button" value="Submit" disabled>
             </form>
+        </div>
+        <div class="app-loading-container">
+            <div class="lds-ripple"><div></div><div></div></div>
         </div>
         <div class="app-courses-container">
             <ul class="courses-list"></ul>
