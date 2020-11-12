@@ -1,5 +1,6 @@
 :root {
-    --primary-color: rgb(179, 119, 119);
+    --primary-color: #a76d60;
+    --primary-white: #f7f9f9;
     --font-primary: "Segoe UI", Roboto, Arial, sans-serif;
 }
 
@@ -15,6 +16,7 @@ ul {
 
 body {
     font-family: var(--font-primary);
+    background-color: var(--primary-white);
 }
 
 .app-container {
@@ -90,10 +92,9 @@ body {
 }
 
 .course-card {
-    display: flex;
-    flex-direction: column;
     margin: 1.4rem 1rem;
     height: auto;
+    background-color: white;
     border: 1px solid gray;
     border-radius: 8px;
 }
@@ -102,4 +103,22 @@ body {
     width: 100%;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+
+.course-card-text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card-text-item {
+    padding: 1rem;
+}
+
+.course-card-text-item-icon {
+    display: inline-block;
+    width: 2rem;
+}
+
+.course-card-text-item-student, .course-card-text-item-course, .course-card-text-item-author {
+    
 }
