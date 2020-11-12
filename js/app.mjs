@@ -31,7 +31,20 @@ const coursesListE = document.querySelector('.courses-list');
 const checkValid = () => {
     if (studentInputE.value != '' && courseInputE.value != '' && authorInputE.value != '') {
         postButtonE.removeAttribute('disabled');
-    } else postButtonE.toggleAttribute('disabled', true);
+    } else {
+        postButtonE.toggleAttribute('disabled', true);
+    }
+    if (studentInputE.value != '') studentInputE.style.borderColor = 'green';
+    else studentInputE.style.borderColor = 'red';
+    if (courseInputE.value != '') courseInputE.style.borderColor = 'green';
+    else courseInputE.style.borderColor = 'red';
+    if (authorInputE.value != '') authorInputE.style.borderColor = 'green';
+    else authorInputE.style.borderColor = 'red';
+};
+
+const generateRandomImgPath = () => {
+    const randomNumber = Math.floor(Math.random() * 10);
+    return `${randomNumber}.jpg`;
 };
 
 const postCourse = () => {
@@ -39,7 +52,7 @@ const postCourse = () => {
     const studentName = studentInputE.value;
     const courseName = courseInputE.value;
     const authorName = authorInputE.value;
-    courses.push(new Course(studentName, courseName, authorName));
+    courses.push(new Course(studentName, courseName, authorName, generateRandomImgPath()));
     populateList();
     setTimeout(() => {
         loadingAnimationContainerE.style.display = 'none';
@@ -50,8 +63,21 @@ const createListItem = (item) => {
     return `
         <li class="courses-list-item">
             <div class="course-card">
-                <img class="course-card-img" src="./img/${item.imgPath}" alt="Bild till kursen ${item.courseName}">
-                <span>${item.studentName}</span><br><span>${item.courseName}</span><br><span>${item.authorName}</span>
+                <img class="course-card-img" src="./img/courses/${item.imgPath}" alt="Bild till kursen ${item.courseName}">
+                <div class="course-card-text-container">
+                    <div class="course-card-text-item">
+                        <span class="course-card-text-item-icon"><i class="fas fa-user-graduate"></i></span>
+                        <span class="course-card-text-item-student-text">${item.studentName}</span>
+                    </div>
+                    <div class="course-card-text-item">
+                        <span class="course-card-text-item-icon"><i class="fas fa-book-reader"></i></span>
+                        <span class="course-card-text-item-course-text">${item.courseName}</span>
+                    </div>
+                    <div class="course-card-text-item">
+                        <span class="course-card-text-item-icon"><i class="fas fa-chalkboard-teacher"></i></span>
+                        <span class="course-card-text-item-author-text">${item.authorName}</span>
+                    </div>
+                </div>
             </div>
         </li>
     `;

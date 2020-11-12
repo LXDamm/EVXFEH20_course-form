@@ -1,5 +1,6 @@
 :root {
-    --primary-color: rgb(179, 119, 119);
+    --primary-color: #a76d60;
+    --primary-white: #f7f9f9;
     --font-primary: "Segoe UI", Roboto, Arial, sans-serif;
 }
 
@@ -15,6 +16,7 @@ ul {
 
 body {
     font-family: var(--font-primary);
+    background-color: var(--primary-white);
 }
 
 .app-container {
@@ -27,6 +29,7 @@ body {
 
 .app-title {
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .post-form {
@@ -42,7 +45,6 @@ body {
     flex-direction: row;
     margin: 8px 0;
     width: 100%;
-    border: 3px solid var(--primary-color);
     border-radius: 5px;
 }
 
@@ -51,13 +53,18 @@ body {
 }
 
 .student-icon, .course-icon, .author-icon {
-    padding: 8px 10px;
+    padding: 12px 10px;
     padding-right: 12px;
     color: white;
 }
 
+.post-input-student, .post-input-course, .post-input-author {
+    padding: 10px;
+}
+
 .post-input-student, .post-input-course, .post-input-author, .post-input-button {
     width: 100%;
+    border: 3px solid var(--primary-color);
 }
 
 .post-input-button {
@@ -84,16 +91,12 @@ body {
 }
 
 .courses-list-item {
-    flex-grow: 100%;
-    flex-shrink: 100%;
-    flex-basis: 100%;
 }
 
 .course-card {
-    display: flex;
-    flex-direction: column;
     margin: 1.4rem 1rem;
     height: auto;
+    background-color: white;
     border: 1px solid gray;
     border-radius: 8px;
 }
@@ -102,4 +105,22 @@ body {
     width: 100%;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+
+.course-card-text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card-text-item {
+    padding: 1rem;
+}
+
+.course-card-text-item-icon {
+    display: inline-block;
+    width: 2rem;
+}
+
+.course-card-text-item-student, .course-card-text-item-course, .course-card-text-item-author {
+    
 }
