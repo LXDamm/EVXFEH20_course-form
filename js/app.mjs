@@ -106,3 +106,7 @@ run();
 
 export {courses as courses};
 export default run;
+
+// Because its a own javascript module, you need to import the module in Firefox and Chromes WebbDeveloper console, to access the object:
+// import('./js/app.mjs').then(m => app = m);
+// Then you can do app.courses; for example
