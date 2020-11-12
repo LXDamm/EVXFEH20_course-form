@@ -31,7 +31,15 @@ const coursesListE = document.querySelector('.courses-list');
 const checkValid = () => {
     if (studentInputE.value != '' && courseInputE.value != '' && authorInputE.value != '') {
         postButtonE.removeAttribute('disabled');
-    } else postButtonE.toggleAttribute('disabled', true);
+    } else {
+        postButtonE.toggleAttribute('disabled', true);
+    }
+    if (studentInputE.value != '') studentInputE.style.borderColor = 'green';
+    else studentInputE.style.borderColor = 'red';
+    if (courseInputE.value != '') courseInputE.style.borderColor = 'green';
+    else courseInputE.style.borderColor = 'red';
+    if (authorInputE.value != '') authorInputE.style.borderColor = 'green';
+    else authorInputE.style.borderColor = 'red';
 };
 
 const generateRandomImgPath = () => {

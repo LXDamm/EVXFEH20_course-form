@@ -29,6 +29,7 @@ body {
 
 .app-title {
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .post-form {
@@ -44,7 +45,6 @@ body {
     flex-direction: row;
     margin: 8px 0;
     width: 100%;
-    border: 3px solid var(--primary-color);
     border-radius: 5px;
 }
 
@@ -53,13 +53,18 @@ body {
 }
 
 .student-icon, .course-icon, .author-icon {
-    padding: 8px 10px;
+    padding: 12px 10px;
     padding-right: 12px;
     color: white;
 }
 
+.post-input-student, .post-input-course, .post-input-author {
+    padding: 10px;
+}
+
 .post-input-student, .post-input-course, .post-input-author, .post-input-button {
     width: 100%;
+    border: 3px solid var(--primary-color);
 }
 
 .post-input-button {
@@ -86,9 +91,6 @@ body {
 }
 
 .courses-list-item {
-    flex-grow: 100%;
-    flex-shrink: 100%;
-    flex-basis: 100%;
 }
 
 .course-card {
